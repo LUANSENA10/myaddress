@@ -1,0 +1,20 @@
+services:
+  mysql:
+    image: 'mysql:latest'
+    environment:
+      - 'MYSQL_DATABASE=myaddress'
+      - 'MYSQL_PASSWORD=secret'
+      - 'MYSQL_ROOT_PASSWORD=verysecret'
+      - 'MYSQL_USER=myuser'
+    ports:
+      - '3306'
+  mockoon-mock-server:
+    image: mockoon/cli
+    ports:
+      - "3000:3001"
+    volumes:
+      - type: bind
+        source: /home/l-nascimento-de-sena/Documentos/myaddress/mockoon.json
+        target: /mockoon/mockoon.json
+        read_only: false
+    command: [ "--data", "https://raw.githubusercontent.com/LUANSENA10/mockoon-data-/refs/heads/main/mockoon.json" ]

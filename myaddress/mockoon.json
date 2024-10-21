@@ -1,0 +1,119 @@
+{
+  "uuid": "744bcb1e-2777-4d56-8dec-3f8f1a421c3d",
+  "lastMigration": 32,
+  "name": "Myaddress",
+  "endpointPrefix": "",
+  "latency": 0,
+  "port": 3001,
+  "hostname": "",
+  "folders": [],
+  "routes": [
+      {
+          "uuid": "40ece485-360e-46a9-b0f8-6e9e497cf974",
+          "type": "http",
+          "documentation": "",
+          "method": "get",
+          "endpoint": "address/:cep",
+          "responses": [
+              {
+                  "uuid": "d8aa7b99-5e43-444f-892b-523147f5cb6b",
+                  "body": "\n    {\n      \"cep\": \"01001-000\",\n      \"logradouro\": \"Praça da Sé\",\n      \"complemento\": \"lado ímpar\",\n      \"unidade\": \"\",\n      \"bairro\": \"Sé\",\n      \"localidade\": \"São Paulo\",\n      \"uf\": \"SP\",\n      \"estado\": \"São Paulo\",\n      \"regiao\": \"Sudeste\",\n      \"ibge\": \"3550308\",\n      \"gia\": \"1004\",\n      \"ddd\": \"11\",\n      \"siafi\": \"7107\"\n    }",
+                  "latency": 0,
+                  "statusCode": 200,
+                  "label": "",
+                  "headers": [],
+                  "bodyType": "INLINE",
+                  "filePath": "",
+                  "databucketID": "",
+                  "sendFileAsBody": false,
+                  "rules": [
+                      {
+                          "target": "params",
+                          "modifier": "cep",
+                          "value": "01001-000",
+                          "invert": false,
+                          "operator": "equals"
+                      }
+                  ],
+                  "rulesOperator": "OR",
+                  "disableTemplating": false,
+                  "fallbackTo404": false,
+                  "default": false,
+                  "crudKey": "id",
+                  "callbacks": []
+              },
+              {
+                  "uuid": "6acc32e2-02c5-4a6d-bcdd-9ff46ccee85f",
+                  "body": "{\n  \"message\":\"zip code does not exist\"\n}",
+                  "latency": 0,
+                  "statusCode": 404,
+                  "label": "",
+                  "headers": [],
+                  "bodyType": "INLINE",
+                  "filePath": "",
+                  "databucketID": "",
+                  "sendFileAsBody": false,
+                  "rules": [],
+                  "rulesOperator": "OR",
+                  "disableTemplating": false,
+                  "fallbackTo404": false,
+                  "default": true,
+                  "crudKey": "id",
+                  "callbacks": []
+              }
+          ],
+          "responseMode": null
+      }
+  ],
+  "rootChildren": [
+      {
+          "type": "route",
+          "uuid": "40ece485-360e-46a9-b0f8-6e9e497cf974"
+      }
+  ],
+  "proxyMode": false,
+  "proxyHost": "",
+  "proxyRemovePrefix": false,
+  "tlsOptions": {
+      "enabled": false,
+      "type": "CERT",
+      "pfxPath": "",
+      "certPath": "",
+      "keyPath": "",
+      "caPath": "",
+      "passphrase": ""
+  },
+  "cors": true,
+  "headers": [
+      {
+          "key": "Content-Type",
+          "value": "application/json"
+      },
+      {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+      },
+      {
+          "key": "Access-Control-Allow-Methods",
+          "value": "GET,POST,PUT,PATCH,DELETE,HEAD,OPTIONS"
+      },
+      {
+          "key": "Access-Control-Allow-Headers",
+          "value": "Content-Type, Origin, Accept, Authorization, Content-Length, X-Requested-With"
+      }
+  ],
+  "proxyReqHeaders": [
+      {
+          "key": "",
+          "value": ""
+      }
+  ],
+  "proxyResHeaders": [
+      {
+          "key": "",
+          "value": ""
+      }
+  ],
+  "data": [],
+  "callbacks": []
+}
