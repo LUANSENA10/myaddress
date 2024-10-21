@@ -30,7 +30,7 @@ Faça um clone do Projeto
   git clone  https://github.com/LUANSENA10/myaddress.git
 ```
 
-Importe o projeto na sua idea de preferencia
+Importe o projeto na sua idea de preferência
 
 Execute a classe MyAddressApplication
 
