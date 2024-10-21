@@ -34,8 +34,6 @@ Importe o projeto na sua idea de preferência
 
 Execute a classe MyAddressApplication
 
-Vá para a pasta do projeto
-
 Abaixo collections :
 
 curl do endpoint de consultar endereço
